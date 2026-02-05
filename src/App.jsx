@@ -5,7 +5,9 @@ import Technologies from "./components/Technologies";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import CanvasCursor from "./components/CanvasCursor";
+import LocomotiveScroll from 'locomotive-scroll';
 export default function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
       {/* Canvas Cursor Layer */}
