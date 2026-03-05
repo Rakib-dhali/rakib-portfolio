@@ -2,6 +2,7 @@ import movieImage from "../assets/movie.png"
 import bubbleImage from "../assets/bubble.png"
 import weatherImage from "../assets/weather.png"
 import passwordGeneratorImage from "../assets/pass.png"
+import spylt from "../assets/spylt.png"
 
 
 export const projects = [
@@ -11,6 +12,14 @@ export const projects = [
         description: "A React + Vite based web app that lets users browse movies (e.g. via an API), view details (poster, release date, rating), and search for specific titles. The UI is responsive and provides a clean experience for exploring movie information.",
         technology: ["React", "TailwindCSS","AppWrite"],
         link: "https://movie-app-flame-one.vercel.app/",
+    },
+    {
+        title: "SPYLT Clone",
+        image: spylt,
+        description: "Frontend recreation and learning project inspired by Spylt — the Awwwards-winning website for high-protein caffeinated chocolate milk (designed by Tubik Studio.",
+        technology: ["HTML", "CSS", "JavaScript"],
+        link: "https://spylt-clone-rakib.vercel.app/",
+
     },
     {
         title: "Mini Weather App",
@@ -39,7 +48,7 @@ export const projects = [
 
 
 export const contact = {
-    address: "Mirpur-10, Dhaka, Bangladesh",
+    address: "Madaripur, Dhaka, Bangladesh",
     phoneNumber: "+8801707******",
-    email: "rakibdhali343@gmail.com",
+    email: "mdrakibhossain343@outlook.com",
 }
