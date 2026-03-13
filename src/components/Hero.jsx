@@ -21,7 +21,7 @@ const Hero = () => {
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-12 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
+              className="pb-12 text-5xl md:text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
             >
               Rakibul Hossain
             </motion.h1>
@@ -37,7 +37,7 @@ const Hero = () => {
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-xl py-6 font-light"
+              className="my-2 max-w-xl py-6 font-light text-center lg:text-left"
             >
               Junior Frontend Developer creating fast, responsive, and visually
               engaging web experiences with React, Next.js, and Tailwind CSS

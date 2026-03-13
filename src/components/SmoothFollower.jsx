@@ -72,7 +72,7 @@ export default function SmoothFollower() {
   return (
     <div className="pointer-events-none fixed inset-0 z-50">
       <div
-        className="absolute rounded-full dark:bg-white bg-black "
+        className="absolute hidden rounded-full dark:bg-white bg-black "
         style={{
           width: '8px',
           height: '8px',
