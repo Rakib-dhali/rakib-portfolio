@@ -11,12 +11,18 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lightswind": "^3.1.25",
     "locomotive": "^0.4.2",
     "locomotive-scroll": "^5.0.1",
+    "lucide-react": "^1.11.0",
     "motion": "^12.23.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {

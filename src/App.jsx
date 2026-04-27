@@ -6,6 +6,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import LocomotiveScroll from "locomotive-scroll";
 import SmoothFollower from "./components/SmoothFollower";
+import Marquee from "./components/Marquee";
+
 export default function App() {
   const locomotiveScroll = new LocomotiveScroll();
   return (
@@ -18,7 +20,8 @@ export default function App() {
         <Navbar />
         <Hero />
         <About />
-        <Technologies />
+        <Marquee />
+        {/* <Technologies /> */}
         <Projects />
         <Contact />
       </div>

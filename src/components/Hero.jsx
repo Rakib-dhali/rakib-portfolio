@@ -1,8 +1,7 @@
-import profilepic from "../assets/profile.png";
 import { motion } from "motion/react";
 
 const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
+  hidden: { y: -100, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
@@ -13,10 +12,10 @@ const container = (delay) => ({
 const Hero = () => {
   return (
     <div className="border-b border-neutral-800 pb-4 ">
-      <div className="flex flex-wrap">
+      <div className="flex items-center justify-center">
         {/* Left Section */}
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
+        <div className="w-full ">
+          <div className="flex flex-col items-center justify-center ">
             <motion.h1
               variants={container(0)}
               initial="hidden"
@@ -37,24 +36,11 @@ const Hero = () => {
               variants={container(1)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-xl py-6 font-light text-center lg:text-left"
+              className="my-2 max-w-xl py-6 font-light text-center text-balance "
             >
               Junior Frontend Developer creating fast, responsive, and visually
               engaging web experiences with React, Next.js, and Tailwind CSS
             </motion.p>
-          </div>
-        </div>
-        {/* { right sectioon} */}
-        <div className="w-full lg:w-1/2 hidden lg:block lg:p-8">
-          <div className="flex justify-center ">
-            <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 1.2 }}
-              className="h-[395px] drop-shadow-[0_20px_20px_rgba(104, 104, 182, 0.35) shadow-xs"
-              src={profilepic}
-              alt="Profile picture of Rakib Dhali"
-            />
           </div>
         </div>
       </div>
