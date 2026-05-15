@@ -1,9 +1,8 @@
-import CoolBeansButton from "@/components/CoolBeansButton"
 
 const Tech = () => {
   return (
     <div>
-      <CoolBeansButton/>
+      npm run dev
     </div>
   )
 }

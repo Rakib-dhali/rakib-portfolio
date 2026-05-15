@@ -1,4 +1,3 @@
-// CoolBeansButton.jsx
 export default function CoolBeansButton({ label = 'hover me', href = '#' }) {
   return (
     <a
