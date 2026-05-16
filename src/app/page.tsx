@@ -1,23 +1,24 @@
+import SmoothScrollProvider from "@/components/Smooth";
 import AboutSection from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
-import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
-import TechSection from "@/sections/Tech";
+import Tech from "@/sections/Tech";
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <SmoothScrollProvider>
       <HeroSection />
       <AboutSection/>
-      <TechSection />
+      <Tech/>
       <ProjectsSection/>
       <TapeSection/>
       <ContactSection/>
       <Footer/>
+      </SmoothScrollProvider>
     </div>
   );
 }

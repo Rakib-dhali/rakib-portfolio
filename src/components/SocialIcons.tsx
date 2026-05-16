@@ -2,25 +2,25 @@ const socialLinks = [
   {
     icon: "fa-linkedin-in",
     bg: "#0077b5",
-    href: "#",
+    href: "https://www.linkedin.com/in/rakibulhossain-dev/",
     label: "LinkedIn",
   },
   {
     icon: "fa-x-twitter",
     bg: "#000000",
-    href: "#",
+    href: "https://x.com/Hossain__Rakib",
     label: "X",
   },
   {
     icon: "fa-github",
     bg: "#333333",
-    href: "#",
+    href: "https://github.com/Rakib-dhali",
     label: "GitHub",
   },
   {
     icon: "fa-brands fa-leetcode",
     bg: "#FFA116",
-    href: "#",
+    href: "https://leetcode.com/u/rakibul343/",
     label: "LeetCode",
   },
 ];

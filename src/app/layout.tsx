@@ -3,6 +3,7 @@ import {Inter, Calistoga} from 'next/font/google'
 import { twMerge } from "tailwind-merge";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
+import { Header } from "@/sections/Header";
 
 
 const inter = Inter({ subsets: ["latin"],
@@ -26,7 +27,9 @@ export default function RootLayout({
     <html
       lang="en"
     >
-      <body className={ twMerge(inter.variable, calistoga.variable, " bg-gray-900 text-white antialiased ")}>{children}</body>
+      <body className={ twMerge(inter.variable, calistoga.variable, " bg-gray-900 text-white antialiased ")}>
+        <Header />
+        {children}</body>
     </html>
   );
 }

@@ -1,5 +1,4 @@
 import memojiImage from "@/assets/images/memoji-computer.png";
-import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
@@ -57,24 +56,28 @@ export const HeroSection = () => {
           <Image src={memojiImage} className="size-25" alt="memoji" />
           <div className="bg-gray-950 border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg ">
             <div className="bg-green-300 size-2.5 relative rounded-full shadow-2xl shadow-green-300">
-              <div className="bg-green-300 size-2.5 animate-ping rounded-full shadow-2xl shadow-green-300 animate-ping-large"></div>
+              <div className="bg-green-300 size-2.5 rounded-full shadow-2xl shadow-green-300 animate-ping-large"></div>
             </div>
             <div className="text-sm font-medium">available for new project</div>
           </div>
         </div>
-        <div className="max-w-lg mx-auto font-">
-          <h1 className="text-3xl md:text-5xl font-calistoga text-center mt-8 tracking-wide">
-            Building exceptional user experiences
-          </h1>
-          <p className="mt-4 text-center text-white md:text-lg ">
-            i specialized in transforming complex ideas into beautiful
-            experiences
-          </p>
-        </div>
+        <div className="max-w-3xl mx-auto text-center">
+  <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white tracking-tight">
+    Rakib
+  </h1>
+
+  <h2 className="mt-2 text-xl md:text-2xl text-emerald-400 font-medium">
+    Frontend Developer
+  </h2>
+
+  <p className="mt-4 text-white/60 text-base md:text-lg max-w-xl mx-auto">
+    Creating responsive and visually polished web experiences with modern technologies.
+  </p>
+</div>
       </div>
       <div className="flex flex-col items-center mt-8 gap-4 md:flex-row md:justify-center ">
-        <CoolBeansButton/>
-        <CoolBeansButton/>
+        <CoolBeansButton label="projects"/>
+        <CoolBeansButton label="resume" href="/test.pdf"/>
       </div>
       <div className="mt-10 flex items-center justify-center">
         <SocialIcons />
