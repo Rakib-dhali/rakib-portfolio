@@ -1,0 +1,219 @@
+<svg viewBox="0 0 380 480" width="100%" role="img">
+
+            {/* Sonar rings */}
+            <circle
+              cx="160"
+              cy="240"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1.5"
+              r="20"
+              opacity="0"
+            >
+              <animate
+                attributeName="r"
+                values="22;82"
+                dur="2.6s"
+                repeatCount="indefinite"
+                begin="0s"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.45;0"
+                dur="2.6s"
+                repeatCount="indefinite"
+                begin="0s"
+              />
+            </circle>
+
+            <circle
+              cx="160"
+              cy="240"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1.5"
+              r="20"
+              opacity="0"
+            >
+              <animate
+                attributeName="r"
+                values="22;82"
+                dur="2.6s"
+                repeatCount="indefinite"
+                begin="0.87s"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.45;0"
+                dur="2.6s"
+                repeatCount="indefinite"
+                begin="0.87s"
+              />
+            </circle>
+
+            <circle
+              cx="160"
+              cy="240"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1.5"
+              r="20"
+              opacity="0"
+            >
+              <animate
+                attributeName="r"
+                values="22;82"
+                dur="2.6s"
+                repeatCount="indefinite"
+                begin="1.73s"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.45;0"
+                dur="2.6s"
+                repeatCount="indefinite"
+                begin="1.73s"
+              />
+            </circle>
+
+            {/* Base paths */}
+            <path
+              id="p0"
+              d="M 200 240 C 260 240 260 75 315 75"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1"
+              opacity="0.18"
+            />
+            <path
+              id="p1"
+              d="M 200 240 C 260 240 260 160 315 160"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1"
+              opacity="0.18"
+            />
+            <path
+              id="p2"
+              d="M 200 240 L 315 240"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1"
+              opacity="0.18"
+            />
+            <path
+              id="p3"
+              d="M 200 240 C 260 240 260 320 315 320"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1"
+              opacity="0.18"
+            />
+            <path
+              id="p4"
+              d="M 200 240 C 260 240 260 405 315 405"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="1"
+              opacity="0.18"
+            />
+
+            {/* Moving dots */}
+            <circle r="4.5" fill="#fff">
+              <animateMotion
+                dur="1.8s"
+                repeatCount="indefinite"
+                begin="0s"
+              >
+                <mpath href="#p0" />
+              </animateMotion>
+            </circle>
+
+            <circle r="4.5" fill="#fff">
+              <animateMotion
+                dur="1.8s"
+                repeatCount="indefinite"
+                begin="0.36s"
+              >
+                <mpath href="#p1" />
+              </animateMotion>
+            </circle>
+
+            <circle r="4.5" fill="#fff">
+              <animateMotion
+                dur="1.5s"
+                repeatCount="indefinite"
+                begin="0.72s"
+              >
+                <mpath href="#p2" />
+              </animateMotion>
+            </circle>
+
+            <circle r="4.5" fill="#fff">
+              <animateMotion
+                dur="1.8s"
+                repeatCount="indefinite"
+                begin="1.08s"
+              >
+                <mpath href="#p3" />
+              </animateMotion>
+            </circle>
+
+            <circle r="4.5" fill="#fff">
+              <animateMotion
+                dur="1.8s"
+                repeatCount="indefinite"
+                begin="1.44s"
+              >
+                <mpath href="#p4" />
+              </animateMotion>
+            </circle>
+
+            {/* Center pulse */}
+            <circle
+              cx="160"
+              cy="240"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="0.5"
+            >
+              <animate
+                attributeName="r"
+                values="46;54;46"
+                dur="2.2s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="opacity"
+                values="0.35;0.07;0.35"
+                dur="2.2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+
+            {/* Center box */}
+            <rect
+              x="120"
+              y="200"
+              width="80"
+              height="80"
+              rx="14"
+              fill="var(--color-background-primary)"
+              stroke="#fff"
+              strokeWidth="1.5"
+            />
+
+            <text
+              x="160"
+              y="248"
+              textAnchor="middle"
+              fontSize="21"
+              fontWeight="700"
+              fontFamily="monospace"
+              fill="#fff"
+            >
+              &lt;/&gt;
+            </text>
+
+          {/* svg icon */}
+             </svg>

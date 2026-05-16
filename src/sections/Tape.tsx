@@ -1,36 +1,36 @@
 import StarIcon from "@/assets/icons/star.svg";
-import Marquee from "react-fast-marquee";
+import "./tape.css";
 
-// const row2: string[] = [
-//   "🟢 Open to Work",
-//   "Remote Only",
-//   "Full Stack Dev",
-//   "SaaS Builder",
-//   "Available Now",
-//   "AI-First Dev",
-//   "Self-Taught",
-//   "Bangladesh 🇧🇩",
-// ];
 export const TapeSection = () => {
+  const items = [
+    "🟢 Open to Work",
+    "Remote Only",
+    "Full Stack Dev",
+    "Available Now",
+    "AI-First Dev",
+    "Bangladesh 🇧🇩",
+  ];
+
   return (
-    <section className="py-16 lg:py-24 overflow-clip">
-      <div className="bg-linear-to-r from-emerald-300 to-sky-400 -rotate-3 -mx-1">
-        <div className="flex mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex flex-none gap-4 py-3 ">
-            <Marquee autoFill>
-             <div className=" text-sm font-extrabold uppercase mx-5 text-gray-900">🟢 Open to Work</div>
-             <StarIcon className="size-6 -rotate-12  mx-5 text-gray-900" />
-             <div className=" text-sm font-extrabold uppercase mx-5 text-gray-900">Remote Only</div>
-             <StarIcon className="size-6 -rotate-12  mx-5 text-gray-900" />
-             <div className=" text-sm font-extrabold uppercase mx-5 text-gray-900">Full Stack Dev</div>
-             <StarIcon className="size-6 -rotate-12  mx-5 text-gray-900" />
-             <div className=" text-sm font-extrabold uppercase mx-5 text-gray-900">Available Now</div>
-             <StarIcon className="size-6 -rotate-12  mx-5 text-gray-900" />
-             <div className=" text-sm font-extrabold uppercase mx-5 text-gray-900">AI-First Dev</div>
-             <StarIcon className="size-6 -rotate-12  mx-5 text-gray-900" />
-             <div className=" text-sm font-extrabold uppercase mx-5 text-gray-900">Bangladesh 🇧🇩</div>
-             <StarIcon className="size-6 -rotate-12  mx-5 text-gray-900" />
-            </Marquee>
+    <section className="py-16 lg:py-24 overflow-hidden">
+      <div className="tape-wrapper bg-linear-to-r from-emerald-300 to-sky-400 -rotate-3 -mx-1">
+        <div className="tape-mask">
+          <div className="tape-track">
+            {/* First copy */}
+            {items.map((text, i) => (
+              <div className="tape-item" key={`a-${i}`}>
+                <span>{text}</span>
+                <StarIcon className="tape-icon" />
+              </div>
+            ))}
+
+            {/* Duplicate copy for seamless loop */}
+            {items.map((text, i) => (
+              <div className="tape-item" key={`b-${i}`}>
+                <span>{text}</span>
+                <StarIcon className="tape-icon" />
+              </div>
+            ))}
           </div>
         </div>
       </div>

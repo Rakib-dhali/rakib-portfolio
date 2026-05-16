@@ -6,10 +6,11 @@ import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import HeroOrbit from "@/components/HeroOrbit";
 import { SocialIcons } from "@/components/SocialIcons";
+import CoolBeansButton from "@/components/CoolBeansButton";
 
 export const HeroSection = () => {
   return (
-    <div className="hero">
+    <div id="home" className="hero">
       <div className="absolute inset-0 mask-[linear-gradient(to_bottom,black_10%,black_70%,transparent)]">
         <div
           style={{ backgroundImage: `url(${grainImage.src})` }}
@@ -72,13 +73,8 @@ export const HeroSection = () => {
         </div>
       </div>
       <div className="flex flex-col items-center mt-8 gap-4 md:flex-row md:justify-center ">
-        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl ">
-          <span className="font-semibold">explore my work</span>
-          <ArrowDown className="size-4" />
-        </button>
-        <button className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
-          <span className="font-semibold ">explore my work</span>
-        </button>
+        <CoolBeansButton/>
+        <CoolBeansButton/>
       </div>
       <div className="mt-10 flex items-center justify-center">
         <SocialIcons />
