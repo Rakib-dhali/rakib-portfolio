@@ -75,8 +75,8 @@ export const HeroSection = () => {
   </p>
 </div>
       </div>
-      <div className="flex flex-col items-center mt-8 gap-4 md:flex-row md:justify-center ">
-        <CoolBeansButton label="projects"/>
+      <div className="flex items-center justify-center mt-8 gap-4 md:flex-row md:justify-center ">
+        <CoolBeansButton label="projects" href="#projects"/>
         <CoolBeansButton label="resume" href="/test.pdf"/>
       </div>
       <div className="mt-10 flex items-center justify-center">

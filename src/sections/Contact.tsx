@@ -33,7 +33,7 @@ const contactItems: ContactItem[] = [
   {
     icon: MapPin,
     label: "Madaripur, Dhaka, Bangladesh",
-    href: null,
+    href: "https://maps.app.goo.gl/jsua7dEqBUPWDEH4A",
   },
 ];
 

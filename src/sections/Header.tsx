@@ -12,7 +12,7 @@ import Image from "next/image";
 import CoolBeansButton from "@/components/CoolBeansButton";
 
 const navItems = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   {
     label: "Projects",
     href: "#projects",
@@ -212,7 +212,7 @@ export const Header = () => {
           className="overflow-hidden hidden sm:block whitespace-nowrap"
         >
           <Link
-            href="#home"
+            href="/"
             className="text-white font-bold text-xl"
           >
             <Image height={50} width={50} src={Logo} alt="logo"/>

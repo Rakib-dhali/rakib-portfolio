@@ -8,32 +8,37 @@ import Github from "@/assets/icons/github.svg";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Self Project",
+    year: "2026",
+    title: "KlipFrame - AI Thumbnail Generator",
     description:
       "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-    link: "https://youtu.be/4k7IdSLxh6w",
+    repo:"https://github.com/Rakib-dhali/Klipframe",
+    live:"#",
     image: darkSaasLandingPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Programming Hero",
+    year: "2026",
+    title: "Coursify - Online Learning Platform",
     description:
       "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-    link: "https://youtu.be/7hi5zwO75yc",
+      repo:"https://github.com/Rakib-dhali/Coursify",
+    live: "https://coursify-rakib.vercel.app/",
+
     image: lightSaasLandingPage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Self Project",
+    year: "2026",
+    title: "SPYLT Clone",
     description:
       "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    repo: "https://github.com/Rakib-dhali/spylt-clone",
+    live: "https://spylt-clone-rakib.vercel.app/",
     image: darkSaasLandingPage,
   },
+  
 ];
 
 export const ProjectsSection = () => {
@@ -52,7 +57,7 @@ export const ProjectsSection = () => {
               key={i}
               className="bg-gray-800 rounded-3xl overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2  after:-outline-offset-2 after:rounded-3xl after:outline-white/20
               px-8 pt-8 md:pt-12 lg:pt-16 lg:px-20 md:px-10 after:pointer-events-none sticky top-20" style={{
-                top: `calc(64px + ${i * 64}px)`
+                top: `calc(64px + ${i * 48}px)`
               }}
             >
               <div
@@ -75,19 +80,18 @@ export const ProjectsSection = () => {
                   </p>
                   <div className="flex w-full gap-4">
                     <a
-                      href={project.link}
+                      href={project.live}
                       className="flex-1 sm:hover:flex-[1.2] transition-all duration-300 ease-in-out"
                     >
-                      <button className="bg-white text-gray-950 h-12 w-full px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                        {" "}
+                      <button className="bg-white hover:text-gray-800 hover:bg-white/80 transition-all duration-300 ease-in-out text-gray-950 h-12 w-full px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
                         View Live <ArrowRightUp className="hidden md:block" />
                       </button>
                     </a>
                     <a
-                      href={project.link}
-                      className="flex-1 sm:hover:flex-[1.2] transition-all duration-500 ease-in-out"
+                      href={project.repo}
+                      className="flex-1  sm:hover:flex-[1.2] transition-all duration-500 ease-in-out"
                     >
-                      <button className="bg-white text-gray-950 h-12 w-full  px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                      <button className="bg-white hover:text-gray-800 hover:bg-white/80 transition-all duration-300 ease-in-out  text-gray-950 h-12 w-full  px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
                         Github <Github className="size-5 hidden md:block" />
                       </button>
                     </a>

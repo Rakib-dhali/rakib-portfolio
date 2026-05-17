@@ -1,4 +1,3 @@
-import { div } from "motion/react-client";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -38,7 +37,7 @@ const Tech = () => {
       <div className="absolute left-0 top-0 h-full md:w-36 w-20 lg:w-48 bg-linear-to-r from-gray-900 via-gray-900/50 to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 h-full md:w-36 w-20 lg:w-48 bg-linear-to-l from-gray-900 via-gray-900/50 to-transparent z-10 pointer-events-none" />
 
-      <div className="space-y-10">
+      <div className="  md:space-y-10">
         <Marquee autoFill={true}>
           {techs.map(({ src, alt }) => (
             <Image
