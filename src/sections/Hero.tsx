@@ -4,7 +4,7 @@ import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import HeroOrbit from "@/components/HeroOrbit";
-import { SocialIcons } from "@/components/SocialIcons";
+import SocialLinks from "@/components/SocialLinks";
 import CoolBeansButton from "@/components/CoolBeansButton";
 
 export const HeroSection = () => {
@@ -47,40 +47,32 @@ export const HeroSection = () => {
         <HeroOrbit size={720} shouldOrbit orbitDuration="46s" rotation={85}>
           <div className="size-3 bg-emerald-300/20 rounded-full"></div>
         </HeroOrbit>
-        <HeroOrbit size={800} shouldOrbit orbitDuration="48s" rotation={-72} >
+        <HeroOrbit size={800} shouldOrbit orbitDuration="48s" rotation={-72}>
           <StarIcon className="size-28 text-emerald-300" />
         </HeroOrbit>
       </div>
       <div className="container mx-auto">
-        <div className="flex flex-col items-center ">
-          <Image src={memojiImage} className="size-25" alt="memoji" />
-          <div className="bg-gray-950 border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg ">
-            <div className="bg-green-300 size-2.5 relative rounded-full shadow-2xl shadow-green-300">
-              <div className="bg-green-300 size-2.5 rounded-full shadow-2xl shadow-green-300 animate-ping-large"></div>
-            </div>
-            <div className="text-sm font-medium">available for new project</div>
-          </div>
-        </div>
         <div className="max-w-3xl mx-auto text-center">
-  <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white tracking-tight">
-    Rakib
-  </h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white tracking-tight">
+            Rakibul Hossain
+          </h1>
 
-  <h2 className="mt-2 text-xl md:text-2xl text-emerald-400 font-medium">
-    Frontend Developer
-  </h2>
+          <h2 className="mt-2 text-xl md:text-2xl text-emerald-400 font-medium">
+            Full Stack Developer
+          </h2>
 
-  <p className="mt-4 text-white/60 text-base md:text-lg max-w-xl mx-auto">
-    Creating responsive and visually polished web experiences with modern technologies.
-  </p>
-</div>
+          <p className="mt-4 text-white/60 text-base md:text-lg max-w-xl mx-auto">
+            Creating responsive and visually polished web experiences with
+            modern technologies.
+          </p>
+        </div>
       </div>
       <div className="flex items-center justify-center mt-8 gap-4 md:flex-row md:justify-center ">
-        <CoolBeansButton label="projects" href="#projects"/>
-        <CoolBeansButton label="resume" href="/test.pdf"/>
+        <CoolBeansButton label="projects" href="#projects" />
+        <CoolBeansButton label="resume" href="/test.pdf" />
       </div>
       <div className="mt-10 flex items-center justify-center">
-        <SocialIcons />
+        <SocialLinks />
       </div>
     </div>
   );
