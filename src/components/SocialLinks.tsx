@@ -58,7 +58,7 @@ export default function SocialLinks() {
               href={link.url}
               aria-label={link.name}
               className={`
-                group relative block w-20 h-20 bg-white text-center rounded-full 
+                group relative block size-15 bg-white text-center rounded-full 
                 border-3 border-white overflow-hidden z-10 flex items-center justify-center
                 transition-all duration-500
                 

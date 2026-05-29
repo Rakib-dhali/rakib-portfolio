@@ -39,7 +39,7 @@ export default function AboutSection() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 75%",
-            end: "bottom 60%",
+            end: "bottom 80%",
             scrub: 1.5,
           },
         }

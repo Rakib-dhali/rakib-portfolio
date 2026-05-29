@@ -16,6 +16,7 @@ const portfolioProjects = [
     repo:"https://github.com/Rakib-dhali/Klipframe",
     live:"#",
     image: darkSaasLandingPage,
+    techStack: ["React","Express", "MongoDB","Pollination", "Typescript"  ],
   },
   {
     company: "Programming Hero",
@@ -27,6 +28,19 @@ const portfolioProjects = [
     live: "https://coursify-rakib.vercel.app/",
 
     image: lightSaasLandingPage,
+    techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth"],
+  },
+  {
+    company: "Programming Hero",
+    year: "2026",
+    title: "Cliniqo - Online Doctor Appointment System",
+    description:
+      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
+      repo:"https://github.com/Rakib-dhali/Coursify",
+    live: "https://coursify-rakib.vercel.app/",
+
+    image: lightSaasLandingPage,
+    techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth",],
   },
   {
     company: "Self Project",
@@ -37,6 +51,7 @@ const portfolioProjects = [
     repo: "https://github.com/Rakib-dhali/spylt-clone",
     live: "https://spylt-clone-rakib.vercel.app/",
     image: darkSaasLandingPage,
+    techStack: ["React","Tailwindcss", "GSAP", ],
   },
   
 ];
@@ -52,9 +67,9 @@ export const ProjectsSection = () => {
           Project I have built now on
         </p>
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project, i) => (
+          {portfolioProjects.map((project,i) => (
             <div
-              key={i}
+              key={project.title}
               className="bg-gray-800 rounded-3xl overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2  after:-outline-offset-2 after:rounded-3xl after:outline-white/20
               px-8 pt-8 md:pt-12 lg:pt-16 lg:px-20 md:px-10 after:pointer-events-none sticky top-20" style={{
                 top: `calc(64px + ${i * 48}px)`
@@ -74,6 +89,15 @@ export const ProjectsSection = () => {
                   <h3 className="font-calistoga text-2xl md:text-4xl mt-2 md:mt-4">
                     {project.title}
                   </h3>
+                  <div className="flex flex-wrap gap-2 mt-1 md:mt-2 lg:mt-4">
+                  {project.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="inline-block bg-white/10 text-white/50 hover:text-white/80 transition-all duration-300 ease-in-out text-sm font-medium px-4 py-2 rounded-lg mt-4"
+                    >
+                      {tech}
+                    </span>
+                  ))}</div>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <p className="text-sm md:text-base  text-white/50 mt-4 md:mt-5">
                     {project.description}
