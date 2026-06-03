@@ -69,7 +69,7 @@ export const HeroSection = () => {
       </div>
       <div className="flex items-center justify-center mt-8 gap-4 md:flex-row md:justify-center ">
         <CoolBeansButton label="projects" href="#projects" />
-        <CoolBeansButton label="resume" href="/rakibul_fullstack_resume.pdf" />
+        <CoolBeansButton label="resume" href="/resume.pdf" />
       </div>
       <div className="mt-10 flex items-center justify-center">
         <SocialLinks />

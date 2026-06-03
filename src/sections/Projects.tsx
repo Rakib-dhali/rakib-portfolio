@@ -1,5 +1,8 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+import klipframe from "@/assets/images/klipframe.png";
+import coursify from "@/assets/images/coursify.png";
+import cliniqo from "@/assets/images/cliniqo.png";
 
 import Image from "next/image";
 import ArrowRightUp from "@/assets/icons/arrow-up-right.svg";
@@ -15,7 +18,7 @@ const portfolioProjects = [
       "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
     repo:"https://github.com/Rakib-dhali/Klipframe",
     live:"#",
-    image: darkSaasLandingPage,
+    image: klipframe,
     techStack: ["React","Express", "MongoDB","Pollination", "Typescript"  ],
   },
   {
@@ -27,7 +30,7 @@ const portfolioProjects = [
       repo:"https://github.com/Rakib-dhali/Coursify",
     live: "https://coursify-rakib.vercel.app/",
 
-    image: lightSaasLandingPage,
+    image: coursify,
     techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth"],
   },
   {
@@ -39,21 +42,9 @@ const portfolioProjects = [
       repo:"https://github.com/Rakib-dhali/Coursify",
     live: "https://coursify-rakib.vercel.app/",
 
-    image: lightSaasLandingPage,
+    image: cliniqo,
     techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth",],
   },
-  {
-    company: "Self Project",
-    year: "2026",
-    title: "SPYLT Clone",
-    description:
-      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-    repo: "https://github.com/Rakib-dhali/spylt-clone",
-    live: "https://spylt-clone-rakib.vercel.app/",
-    image: darkSaasLandingPage,
-    techStack: ["React","Tailwindcss", "GSAP", ],
-  },
-  
 ];
 
 export const ProjectsSection = () => {
@@ -67,12 +58,12 @@ export const ProjectsSection = () => {
           Project I have built now on
         </p>
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
-          {portfolioProjects.map((project,i) => (
+          {portfolioProjects.map((project, i) => (
             <div
               key={project.title}
               className="bg-gray-800 rounded-3xl overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2  after:-outline-offset-2 after:rounded-3xl after:outline-white/20
               px-8 pt-8 md:pt-12 lg:pt-16 lg:px-20 md:px-10 after:pointer-events-none sticky top-20" style={{
-                top: `calc(64px + ${i * 48}px)`
+                top: `calc(48px + ${i * 48}px)`
               }}
             >
               <div
@@ -124,7 +115,7 @@ export const ProjectsSection = () => {
 
                 <div className="relative">
                   <Image
-                    className="mt-8 -mb-4 md:mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none "
+                    className="mt-8 -mb-4 md:mb-0 rounded-[19px] lg:rounded-[25px] md: lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none "
                     src={project.image}
                     alt={project.title}
                   />
