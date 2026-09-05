@@ -1,46 +1,115 @@
 
 "use client";
 
-import grainImage from "@/assets/images/grain.jpg"
-
+import grainImage from "@/assets/images/grain.jpg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  HiOutlineCode,
+  HiOutlineLightningBolt,
+  HiOutlineGlobeAlt,
+} from "react-icons/hi";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiNodedotjs,
+  SiMongodb,
+  SiTailwindcss,
+} from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const aboutText =` I'm Rakibul — a Full-Stack Developer based in Bangladesh, building for the web with React, Next.js, TypeScript, Node.js, Express, and MongoDB.
-My journey started with plain HTML and CSS, but I never stopped. Over the past couple of years I've gone from building simple UIs to architecting full-stack applications with auth systems, REST APIs, database pipelines, and AI integrations.
-Some of my recent work includes Klipframe — a SaaS platform for AI-powered YouTube thumbnail generation — and Coursify, a full-featured online learning platform with Google OAuth, email verification, and Framer Motion animations. I don't just follow tutorials; I build things that have real moving parts.
-What sets me apart is how I work: I use an AI-first development approach with Cursor daily. This isn't about shortcuts — it's about staying sharp, iterating faster, and writing better code.
-I'm actively seeking remote full-stack opportunities . If you're looking for a developer who ships, learns fast, and brings genuine ownership to their work — let's talk.`
+const highlights = [
+  {
+    icon: HiOutlineCode,
+    label: "Full-Stack",
+    desc: "End-to-end development",
+  },
+  {
+    icon: HiOutlineLightningBolt,
+    label: "AI-First",
+    desc: "Cursor-powered workflow",
+  },
+  {
+    icon: HiOutlineGlobeAlt,
+    label: "Remote Ready",
+    desc: "Open to global teams",
+  },
+];
+
+const coreTech = [
+  { icon: SiReact, label: "React", color: "#61DAFB" },
+  { icon: SiNextdotjs, label: "Next.js", color: "#ffffff" },
+  { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
+  { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
+  { icon: SiMongodb, label: "MongoDB", color: "#47A248" },
+  { icon: SiTailwindcss, label: "Tailwind", color: "#06B6D4" },
+];
+
+const aboutText = `I'm Rakibul — a Full-Stack Developer based in Bangladesh, building for the web with React, Next.js, TypeScript, Node.js, Express, and MongoDB. My journey started with plain HTML and CSS, but I never stopped. Over the past couple of years I've gone from building simple UIs to architecting full-stack applications with auth systems, REST APIs, database pipelines, and AI integrations. Some of my recent work includes Klipframe — a SaaS platform for AI-powered YouTube thumbnail generation — and Coursify, a full-featured online learning platform with Google OAuth, email verification, and Framer Motion animations. I don't just follow tutorials; I build things that have real moving parts. What sets me apart is how I work: I use an AI-first development approach with Cursor daily. This isn't about shortcuts — it's about staying sharp, iterating faster, and writing better code. I'm actively seeking remote full-stack opportunities. If you're looking for a developer who ships, learns fast, and brings genuine ownership to their work — let's talk.`;
 
 export default function AboutSection() {
-  const sectionRef =
-    useRef<HTMLElement | null>(
-      null
-    );
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const cardsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Animate the paragraph words
       gsap.fromTo(
-        ".word",
+        ".about-word",
         {
-          opacity: 0.15,
-          y: 50,
-          filter: "blur(12px)",
+          opacity: 0.12,
+          y: 30,
+          filter: "blur(8px)",
         },
         {
           opacity: 1,
           y: 0,
           filter: "blur(0px)",
-          stagger: 0.08,
+          stagger: 0.06,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-            end: "bottom 80%",
-            scrub: 1.5,
+            trigger: ".about-text-block",
+            start: "top 80%",
+            end: "bottom 75%",
+            scrub: 1.2,
+          },
+        }
+      );
+
+      // Animate highlight cards
+      gsap.fromTo(
+        ".highlight-card",
+        { opacity: 0, y: 40, scale: 0.92 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.15,
+          duration: 0.8,
+          ease: "back.out(1.4)",
+          scrollTrigger: {
+            trigger: ".highlights-grid",
+            start: "top 85%",
+          },
+        }
+      );
+
+      // Animate core tech pills
+      gsap.fromTo(
+        ".core-tech-pill",
+        { opacity: 0, x: -20 },
+        {
+          opacity: 1,
+          x: 0,
+          stagger: 0.08,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".core-tech-row",
+            start: "top 88%",
           },
         }
       );
@@ -50,40 +119,103 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section
-      id="about"
-      ref={sectionRef}
-      className="relative"
-    >
-      <div className="max-w-5xl mx-auto py-16 pt-12 lg:py-24 lg:pt-20 px-5">
-        {/* Top heading */}
-        <div className=" flex items-center justify-center">
-         
-            <h2 className="font-calistoga text-3xl md:5xl text-center mb-10">
-          About Me
-        </h2>
+    <section id="about" ref={sectionRef} className="relative py-16 lg:py-28">
+      <div className="max-w-6xl mx-auto px-5">
+        {/* Section heading */}
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text font-bold uppercase tracking-widest text-sm mb-3">
+            <span>Get to know me</span>
+          </div>
+          <h2 className="font-calistoga text-3xl md:text-5xl">About Me</h2>
+          <p className="text-white/50 mt-3 max-w-lg mx-auto text-sm md:text-base">
+            A passionate developer who turns ideas into polished digital
+            experiences
+          </p>
         </div>
 
-        {/* Main card */}
-        <div className=" relative overflow-hidden backdrop-blur-xl p-6 md:p-10 lg:p-14 border-2 border-white/20 rounded-2xl">
-          <div
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* Left column — Cards */}
+          <div ref={cardsRef} className="lg:col-span-2 flex flex-col gap-5">
+            {/* Highlight cards */}
+            <div className="highlights-grid flex flex-col gap-4">
+              {highlights.map((item, i) => (
+                <div
+                  key={item.label}
+                  className="highlight-card group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-5 transition-all duration-500 hover:border-emerald-400/30 hover:bg-white/[0.07]"
+                >
+                  <div
+                    className="absolute inset-0 -z-10 opacity-5"
+                    style={{
+                      backgroundImage: `url(${grainImage.src})`,
+                    }}
+                  />
+                  {/* Hover glow */}
+                  <div className="absolute -top-12 -right-12 size-32 rounded-full bg-emerald-400/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="flex items-center gap-4">
+                    <div className="flex-shrink-0 size-12 rounded-xl bg-linear-to-br from-emerald-400/20 to-sky-400/20 flex items-center justify-center border border-white/10">
+                      <item.icon className="size-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-base">
+                        {item.label}
+                      </h3>
+                      <p className="text-white/40 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Core tech row */}
+            <div className="core-tech-row relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-5">
+              <div
                 className="absolute inset-0 -z-10 opacity-5"
-                style={{ backgroundImage: `url(${grainImage.src})` }}
-              ></div>
-        {/* Animated paragraph */}
-          <div className=" z-10">
-            <p className="flex flex-wrap text-sm  md:text-lg lg:text-2xl font-normal">
-              {aboutText
-                .split(" ")
-                .map((word, index) => (
+                style={{
+                  backgroundImage: `url(${grainImage.src})`,
+                }}
+              />
+              <h4 className="text-white/50 text-xs uppercase tracking-widest mb-3 font-semibold">
+                Core Stack
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {coreTech.map((tech) => (
+                  <div
+                    key={tech.label}
+                    className="core-tech-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/10 text-sm text-white/70 hover:text-white hover:border-white/20 transition-all duration-300"
+                  >
+                    <tech.icon
+                      className="size-3.5"
+                      style={{ color: tech.color }}
+                    />
+                    <span>{tech.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right column — Text */}
+          <div className="lg:col-span-3">
+            <div className="about-text-block relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 md:p-10 lg:p-12 h-full">
+              <div
+                className="absolute inset-0 -z-10 opacity-5"
+                style={{
+                  backgroundImage: `url(${grainImage.src})`,
+                }}
+              />
+              {/* Decorative accent line */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-emerald-400/40 to-transparent" />
+              <p className="flex flex-wrap text-sm md:text-base lg:text-lg leading-relaxed">
+                {aboutText.split(" ").map((word, index) => (
                   <span
                     key={index}
-                    className="word text-white/60 mr-3 mb-3"
+                    className="about-word text-white/55 mr-2 mb-1.5 transition-colors duration-300 hover:text-emerald-300"
                   >
                     {word}
                   </span>
                 ))}
-            </p>
+              </p>
+            </div>
           </div>
         </div>
       </div>

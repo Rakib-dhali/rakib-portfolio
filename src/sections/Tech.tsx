@@ -1,69 +1,231 @@
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
+"use client";
 
-const techs = [
-  { src: "/m/authjs.svg", alt: "Auth.js" },
-  { src: "/m/better-auth_dark.svg", alt: "Better Auth" },
-  { src: "/m/copilot_dark.svg", alt: "GitHub Copilot" },
-  { src: "/m/css_old.svg", alt: "CSS" },
-  { src: "/m/expressjs_dark.svg", alt: "Express" },
-  { src: "/m/figma.svg", alt: "Figma" },
-  { src: "/m/flowbite.svg", alt: "Flowbite" },
-  { src: "/m/git.svg", alt: "Git" },
-  { src: "/m/github_dark.svg", alt: "GitHub" },
-  { src: "/m/heroui_light.svg", alt: "Hero UI" },
-  { src: "/m/html5.svg", alt: "HTML5" },
-  { src: "/m/imagekit.jpeg", alt: "ImageKit" },
-  { src: "/m/javascript.svg", alt: "JavaScript" },
-  { src: "/m/mongodb.svg", alt: "MongoDB" },
-  { src: "/m/motion_dark.svg", alt: "Motion" },
-  { src: "/m/nextjs.svg", alt: "Next.js" },
-  { src: "/m/npm.svg", alt: "NPM" },
-  { src: "/m/postman.svg", alt: "Postman" },
-  { src: "/m/react_dark.svg", alt: "React" },
-  { src: "/m/reactrouter.svg", alt: "React Router" },
-  { src: "/m/render.svg", alt: "Render" },
-  { src: "/m/tailwindcss.svg", alt: "Tailwind CSS" },
-  { src: "/m/typescript.svg", alt: "TypeScript" },
-  { src: "/m/vite.svg", alt: "Vite" },
-  { src: "/m/vscode.svg", alt: "VS Code" },
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import grainImage from "@/assets/images/grain.jpg";
+
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiTailwindcss,
+  SiCss,
+  SiHtml5,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiVite,
+  SiNpm,
+  SiFigma,
+  SiFramer,
+  SiRender,
+  SiReactrouter,
+  SiPostgresql,
+  SiPrisma,
+  SiMongoose,
+  SiVuedotjs,
+  SiVercel,
+  SiCloudinary,
+  SiFoodpanda,
+  SiBetterauth,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { TbRoute, TbRocket } from "react-icons/tb";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface TechItem {
+  icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
+  name: string;
+  color: string;
+  category: string;
+  borderColor?: string;
+}
+
+const techCategories = [
+  "All",
+  "Frontend",
+  "Backend",
+  "Tools",
+] as const;
+
+const techItems: TechItem[] = [
+  // Frontend
+  { icon: SiReact, name: "React", color: "#61DAFB", category: "Frontend" },
+  { icon: SiNextdotjs, name: "Next.js", color: "#ffffff", category: "Frontend" },
+  { icon: SiTypescript, name: "TypeScript", color: "#3178C6", category: "Frontend" },
+  { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E", category: "Frontend" },
+  { icon: SiHtml5, name: "HTML5", color: "#E34F26", category: "Frontend" },
+  { icon: SiCss, name: "CSS3", color: "#1572B6", category: "Frontend" },
+  { icon: SiTailwindcss, name: "Tailwind", color: "#06B6D4", category: "Frontend" },
+  { icon: SiReactrouter, name: "React Router", color: "#CA4245", category: "Frontend" },
+  { icon: SiFramer, name: "Motion", color: "#0055FF", category: "Frontend" },
+
+  { icon: SiVuedotjs, name: "Vue.js", color: "#4FC08D", category: "Frontend" },
+  { icon: TbRoute, name: "Vue Router", color: "#4FC08D", category: "Frontend" },
+  { icon: SiFoodpanda, name: "Zustand", color: "#4a4138", category: "Frontend" },
+
+  // Backend
+  { icon: SiNodedotjs, name: "Node.js", color: "#339933", category: "Backend" },
+  { icon: SiExpress, name: "Express", color: "#ffffff", category: "Backend" },
+  { icon: SiMongodb, name: "MongoDB", color: "#47A248", category: "Backend" },
+  { icon: SiPostgresql, name: "PostgreSQL", color: "#4169E1", category: "Backend" },
+  { icon: SiPrisma, name: "Prisma", color: "#2D3748", category: "Backend" },
+  { icon: SiMongoose, name: "Mongoose", color: "#880000", category: "Backend" },
+  { icon: SiBetterauth , name: "BetterAuth", color: "#10B981", category: "Backend" },
+  { icon: SiNextdotjs, name: "NextAuth", color: "#EB5424", category: "Backend" },
+
+  // Tools
+  { icon: SiGit, name: "Git", color: "#F05032", category: "Tools" },
+  { icon: SiGithub, name: "GitHub", color: "#ffffff", category: "Tools" },
+  { icon: VscVscode, name: "VS Code", color: "#007ACC", category: "Tools" },
+  { icon: SiPostman, name: "Postman", color: "#FF6C37", category: "Tools" },
+  { icon: SiVite, name: "Vite", color: "#646CFF", category: "Tools" },
+  { icon: SiNpm, name: "NPM", color: "#CB3837", category: "Tools" },
+  { icon: SiFigma, name: "Figma", color: "#F24E1E", category: "Tools" },
+  { icon: SiRender, name: "Render", color: "#46E3B7", category: "Tools" },
+  { icon: SiVercel, name: "Vercel", color: "#ffffff", category: "Tools" },
+  { icon: SiCloudinary, name: "Cloudinary", color: "#3448C5", category: "Tools" },
+  { icon: TbRocket, name: "Antigravity", color: "#A78BFA", category: "Tools" },
 ];
 
 const Tech = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+
+  const filteredTech =
+    activeFilter === "All"
+      ? techItems
+      : techItems.filter((t) => t.category === activeFilter);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate section heading
+      gsap.fromTo(
+        ".tech-heading",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".tech-heading",
+            start: "top 88%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  // Animate cards when filter changes
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".tech-card",
+        { opacity: 0, y: 25, scale: 0.9 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.04,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [activeFilter]);
+
   return (
-    <div className="max-w-5xl relative mx-auto ">
+    <section ref={sectionRef} className="relative py-16 lg:py-24">
+      <div className="max-w-5xl mx-auto px-5">
+        {/* Section heading */}
+        <div className="tech-heading text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text font-bold uppercase tracking-widest text-sm mb-3">
+            <span>My Toolkit</span>
+          </div>
+          <h2 className="font-calistoga text-3xl md:text-5xl">Tech & Tools</h2>
+          <p className="text-white/50 mt-3 max-w-md mx-auto text-sm md:text-base">
+            Technologies and tools I use to bring ideas to life
+          </p>
+        </div>
 
-      <h1 className="text-3xl text-center font font-semibold mb-10 font-calistoga">Tech & Tools</h1>
-      <div className="absolute left-0 top-0 h-full md:w-36 w-20 lg:w-48 bg-linear-to-r from-gray-900 via-gray-900/50 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full md:w-36 w-20 lg:w-48 bg-linear-to-l from-gray-900 via-gray-900/50 to-transparent z-10 pointer-events-none" />
+        {/* Category filters */}
+        <div className="flex items-center justify-center gap-2 mb-10 flex-wrap">
+          {techCategories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveFilter(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${
+                activeFilter === cat
+                  ? "bg-white text-gray-900 border-white shadow-lg shadow-white/10"
+                  : "bg-white/5 text-white/60 border-white/10 hover:bg-white/[0.1] hover:text-white hover:border-white/20"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-      <div className="  md:space-y-10">
-        <Marquee autoFill={true}>
-          {techs.map(({ src, alt }) => (
-            <Image
-              key={src}
-              src={src}
-              alt={alt}
-              height={70}
-              width={70}
-              className="mx-10 md:mx-12 lg:mx-15 "
-            />
-          ))}
-        </Marquee>
-        <Marquee autoFill={true} direction="right">
-          {techs.map(({ src, alt }) => (
-            <Image
-              key={src}
-              src={src}
-              alt={alt}
-              height={70}
-              width={70}
-              className="mx-10 md:mx-12 lg:mx-15 "
-            />
-          ))}
-        </Marquee>
+        {/* Tech grid */}
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/3 backdrop-blur-sm p-6 md:p-10">
+          <div
+            className="absolute inset-0 -z-10 opacity-5"
+            style={{ backgroundImage: `url(${grainImage.src})` }}
+          />
+          {/* Decorative accent line */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-emerald-400/40 to-transparent" />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+            {filteredTech.map((tech) => (
+              <div
+                key={tech.name}
+                className="tech-card group relative overflow-hidden rounded-2xl border border-white/8 bg-white/3 p-4 md:p-5 flex flex-col items-center gap-3 transition-all duration-500 hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20"
+              >
+                {/* Glow on hover */}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"
+                  style={{
+                    background: `radial-gradient(circle at center, ${tech.color}08 0%, transparent 70%)`,
+                  }}
+                />
+                <div
+                  className="size-10 md:size-12 flex items-center justify-center rounded-xl transition-all duration-500 group-hover:scale-110"
+                  style={{
+                    background: tech.borderColor
+                      ? "linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03))"
+                      : `linear-gradient(135deg, ${tech.color}15, ${tech.color}08)`,
+                    border: `1px solid ${tech.borderColor || `${tech.color}20`}`,
+                  }}
+                >
+                  <tech.icon
+                    className="size-5 md:size-6 transition-all duration-500 group-hover:drop-shadow-[0_0_8px_var(--glow)]"
+                    style={
+                      {
+                        color: tech.color,
+                        "--glow": `${tech.color}80`,
+                      } as React.CSSProperties
+                    }
+                  />
+                </div>
+                <span className="text-white/60 text-xs md:text-sm font-medium text-center group-hover:text-white/90 transition-colors duration-300">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
