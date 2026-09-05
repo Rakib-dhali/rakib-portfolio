@@ -1,8 +1,7 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import klipframe from "@/assets/images/klipframe.png";
 import coursify from "@/assets/images/coursify.png";
 import cliniqo from "@/assets/images/cliniqo.png";
+import neofi from "@/assets/images/neofi.png";
 
 import Image from "next/image";
 import ArrowRightUp from "@/assets/icons/arrow-up-right.svg";
@@ -43,6 +42,18 @@ const portfolioProjects = [
     live: "https://coursify-rakib.vercel.app/",
 
     image: cliniqo,
+    techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth",],
+  },
+  {
+    company: "Programming Hero",
+    year: "2026",
+    title: "Cliniqo - Online Doctor Appointment System",
+    description:
+      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
+      repo:"https://github.com/Rakib-dhali/Coursify",
+    live: "https://coursify-rakib.vercel.app/",
+
+    image: neofi,
     techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth",],
   },
 ];

@@ -209,13 +209,13 @@ export const Header = () => {
           transition={{
             duration: 0.35,
           }}
-          className="overflow-hidden hidden sm:block whitespace-nowrap "
+          className="overflow-hidden hidden sm:block whitespace-nowrap"
         >
           <Link
             href="/"
-            className="text-white font-bold text-xl w-40 bg-red-200"
+            className="text-white font-bold text-xl "
           >
-            <Image height={50} width={50} src={Logo} alt="logo"/>
+            <Image height={50} width={50} src={Logo} alt="logo" />
           </Link>
         </motion.div>
 
@@ -319,7 +319,7 @@ export const Header = () => {
           }}
           className="overflow-hidden hidden sm:block whitespace-nowrap mt-"
         >
-          <CoolBeansButton href="#contact" label="Hire Me" className="text-white/80 text-[20px] border-white hover:text-black after:bg-white"/>
+          <CoolBeansButton href="#contact" label="Hire Me" className="text-white/80 text-[20px]  border-white hover:text-black after:bg-white"/>
         </motion.div>
       </motion.div>
     </motion.header>
