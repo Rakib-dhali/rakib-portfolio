@@ -1,6 +1,7 @@
 import SmoothScrollProvider from "@/components/Smooth";
 import AboutSection from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
+import ExperienceSection from "@/sections/Experience";
 import { Footer } from "@/sections/Footer";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection/>
       <Tech/>
+      <ExperienceSection/>
       <ProjectsSection/>
       <TapeSection/>
       <ContactSection/>
