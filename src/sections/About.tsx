@@ -17,6 +17,9 @@ import {
   SiNodedotjs,
   SiMongodb,
   SiTailwindcss,
+  SiPostgresql,
+  SiExpress,
+  SiPrisma,
 } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -43,9 +46,11 @@ const coreTech = [
   { icon: SiReact, label: "React", color: "#61DAFB" },
   { icon: SiNextdotjs, label: "Next.js", color: "#ffffff" },
   { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
-  { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
   { icon: SiMongodb, label: "MongoDB", color: "#47A248" },
   { icon: SiTailwindcss, label: "Tailwind", color: "#06B6D4" },
+  {icon: SiPostgresql, label: "PostgreSQL", color: "#336791"},
+  {icon: SiExpress, label: "Express", color: "#000000"},
+  {icon: SiPrisma, label: "Prisma", color: "#2D3748"},
 ];
 
 const aboutText = `I'm Rakibul — a Full-Stack Developer based in Bangladesh, building for the web with React, Next.js, TypeScript, Node.js, Express, and MongoDB. My journey started with plain HTML and CSS, but I never stopped. Over the past couple of years I've gone from building simple UIs to architecting full-stack applications with auth systems, REST APIs, database pipelines, and AI integrations. Some of my recent work includes Klipframe — a SaaS platform for AI-powered YouTube thumbnail generation — and Coursify, a full-featured online learning platform with Google OAuth, email verification, and Framer Motion animations. I don't just follow tutorials; I build things that have real moving parts. What sets me apart is how I work: I use an AI-first development approach with Cursor daily. This isn't about shortcuts — it's about staying sharp, iterating faster, and writing better code. I'm actively seeking remote full-stack opportunities. If you're looking for a developer who ships, learns fast, and brings genuine ownership to their work — let's talk.`;

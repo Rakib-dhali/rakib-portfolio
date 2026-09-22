@@ -1,60 +1,57 @@
-import klipframe from "@/assets/images/klipframe.png";
-import coursify from "@/assets/images/coursify.png";
-import cliniqo from "@/assets/images/cliniqo.png";
-import neofi from "@/assets/images/neofi.png";
-
 import Image from "next/image";
 import ArrowRightUp from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import Github from "@/assets/icons/github.svg";
+import klipframe from "@/assets/images/klipframe.png";
+import trackify from "@/assets/images/trackify.png";
+import skillswap from "@/assets/images/skillswap.png";
+import whispr from "@/assets/images/whispr.png";
+
 
 const portfolioProjects = [
   {
     company: "Self Project",
-    year: "2026",
+    year: "2025",
     title: "KlipFrame - AI Thumbnail Generator",
     description:
-      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-    repo:"https://github.com/Rakib-dhali/Klipframe",
-    live:"#",
+      "AI-powered YouTube thumbnail generator. Describe your vision and let AI bring it to life with FLUX.2-pro model. Generate stunning, click-worthy thumbnails with multiple styles, aspect ratios, and color schemes.",
+    repo: "https://github.com/Rakib-dhali/Klipframe",
+    live: "https://klipframe.vercel.app",
     image: klipframe,
-    techStack: ["React","Express", "MongoDB","Pollination", "Typescript"  ],
+    techStack: ["React 19", "TypeScript", "Express", "MongoDB", "Silicon Flow API"],
   },
   {
-    company: "Programming Hero",
-    year: "2026",
-    title: "Coursify - Online Learning Platform",
+    company: "Self Project",
+    year: "2025",
+    title: "Trackify - Job Application Tracker",
     description:
-      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-      repo:"https://github.com/Rakib-dhali/Coursify",
-    live: "https://coursify-rakib.vercel.app/",
-
-    image: coursify,
-    techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth"],
+      "Comprehensive job application tracking system with visual Kanban pipeline, smart analytics dashboard, and detailed contact management. Organize your job search and track interview stages effortlessly.",
+    repo: "https://github.com/Rakib-dhali/Trackify",
+    live: "https://tracki-fy.vercel.app/",
+    image: trackify,
+    techStack: ["Next.js 15", "PostgreSQL", "Prisma", "Better Auth", "Zustand"],
   },
   {
-    company: "Programming Hero",
-    year: "2026",
-    title: "Cliniqo - Online Doctor Appointment System",
+    company: "Self Project",
+    year: "2024",
+    title: "SkillSwap - Freelance Marketplace",
     description:
-      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-      repo:"https://github.com/Rakib-dhali/Coursify",
-    live: "https://coursify-rakib.vercel.app/",
-
-    image: cliniqo,
-    techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth",],
+      "Modern freelance marketplace connecting clients with skilled freelancers. Features role-based access, task posting, bidding system, Stripe payment integration, and comprehensive admin dashboard.",
+    repo: "https://github.com/Rakib-dhali/skillswap-client",
+    live: "https://skillswap-client-a10.vercel.app/",
+    image: skillswap,
+    techStack: ["Next.js","Express", "MongoDB", "Better Auth", "Stripe",],
   },
   {
-    company: "Programming Hero",
-    year: "2026",
-    title: "Cliniqo - Online Doctor Appointment System",
+    company: "Self Project",
+    year: "2024",
+    title: "Whispr - Real-Time Chat Application",
     description:
-      "If problem different — tell me: file exist but show browser SVG icon instead of render? That = browser need proper MIME or file serve issue. Explain more.",
-      repo:"https://github.com/Rakib-dhali/Coursify",
-    live: "https://coursify-rakib.vercel.app/",
-
-    image: neofi,
-    techStack: ["NextJs","Express", "MongoDB","TypeScript", "Better-Auth",],
+      "Ultra-fast real-time web chat with Socket.io, live presence tracking, rich media sharing, and enterprise security. WhatsApp-inspired UI with Arcjet bot protection and transactional email workflows.",
+    repo: "https://github.com/Rakib-dhali/whispr",
+    live: "https://whispr-7h13.onrender.com/",
+    image: whispr,
+    techStack: ["React 19", "TypeScript", "Socket.io", "Node.js", "MongoDB","Cloudinary"],
   },
 ];
 
@@ -74,7 +71,7 @@ export const ProjectsSection = () => {
               key={project.title}
               className="bg-gray-800 rounded-3xl overflow-hidden z-0 after:z-10 after:content-[''] after:absolute after:inset-0  after:outline-2  after:-outline-offset-2 after:rounded-3xl after:outline-white/20
               px-8 pt-8 md:pt-12 lg:pt-16 lg:px-20 md:px-10 after:pointer-events-none sticky top-20" style={{
-                top: `calc(48px + ${i * 48}px)`
+                top: '48px',
               }}
             >
               <div
